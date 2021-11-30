@@ -27,6 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'development') app.use(cors());
 app.use('/api', studentRoute);
 
+app.get('/test2', (req, res) => {
+  console.log('test2 page');
+  res.status(200).send('hello test2');
+});
+
 app.use((err, req, res, next) => {
   // console.log('error this error handler =', err)
   console.error(err.message);
