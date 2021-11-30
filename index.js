@@ -4,10 +4,6 @@ const path = require('path');
 const mongoose = require('mongoose');
 const dbConfig = process.env.MONGODB_URI;
 require('dotenv').config();
-// const bodyPasser = require('body-parser');
-
-console.log("dbConfig");
-console.log(dbConfig);
 
 // Express route
 const studentRoute = require('./routes/student.route');
@@ -42,6 +38,7 @@ app.use((err, req, res, next) => {
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
+    console.log('welcome to my web')
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   });
 }
