@@ -27,11 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'development') app.use(cors());
 app.use('/api', studentRoute);
 
-app.get('/test2', (req, res) => {
-  console.log('test2 page');
-  res.status(200).send('hello test2');
-});
-
 app.use((err, req, res, next) => {
   // console.log('error this error handler =', err)
   console.error(err.message);
@@ -41,14 +36,8 @@ app.use((err, req, res, next) => {
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
-  app.get('/test1', (req, res) => {
-    console.log('visited test1 page');
-    res.status(200).send('hello world');
-  });
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
-    console.log('welcome to my web');
-    res.status(200).send('hello star');
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   });
 }
