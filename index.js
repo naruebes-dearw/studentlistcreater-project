@@ -31,12 +31,6 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'development') app.use(cors());
 app.use('/api', studentRoute);
 
-// 404 Error
-app.use((req, res, next) => {
-  console.log('error 404')
-  // next(createError(404));
-})
-
 app.use((err, req, res, next) => {
   // console.log('error this error handler =', err)
   console.error(err.message);
