@@ -23,7 +23,7 @@ function App() {
 
             <Navbar.Brand>
               <Link to={"/create-student"} className="nav-link">
-                React MERN Stack CRUD
+                Student List Creater
               </Link>
             </Navbar.Brand>
 
@@ -33,6 +33,7 @@ function App() {
                   Create Student
                 </Link>
               </Nav>
+              <div class="vertical-line"></div>
               <Nav>
                 <Link to={"/student-list"} className="nav-link">
                   Student List
