@@ -45,11 +45,12 @@ if (process.env.NODE_ENV === 'production') {
     console.log('visited test1 page');
     res.status(200).send('hello world');
   });
-  // app.use(express.static('client/build'));
-  // app.get('*', (req, res) => {
-  //   console.log('welcome to my web')
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  // });
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    console.log('welcome to my web');
+    res.status(200).send('hello star');
+    // res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  });
 }
 
 // PORT
