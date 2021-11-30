@@ -53,7 +53,7 @@ export default class CreateStudent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="create-student">
         <h1>Create Student</h1>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="Name">
