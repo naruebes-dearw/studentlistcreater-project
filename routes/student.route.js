@@ -1,6 +1,6 @@
 let mongoose = require('mongoose'),
-express = require('express'),
-router = express.Router();
+  express = require('express'),
+  router = express.Router();
 
 // Student model
 let studentSchema = require('../models/Student');
@@ -18,12 +18,12 @@ router.route('/create-student').post((req, res, next) => {
 });
 
 // Read student
-router.route('/').get((req, res, next) => {
+router.route('/students').get((req, res, next) => {
   studentSchema.find((error, data) => {
     if (error) return next(error);
     res.json(data);
   })
-  
+
 });
 
 // Get single student

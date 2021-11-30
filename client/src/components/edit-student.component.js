@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
+import { EDIT_STUDENT, UPDATE_STUDENT } from '../server_url'
 
 export default class EditStudent extends Component {
 
@@ -16,7 +17,7 @@ export default class EditStudent extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/students/edit-student/' + this.props.match.params.id)
+    axios.get(EDIT_STUDENT + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,
@@ -51,7 +52,7 @@ export default class EditStudent extends Component {
       rollno: this.state.rollno
     };
 
-    await axios.put('http://localhost:4000/students/update-student/' +
+    await axios.put(UPDATE_STUDENT +
       this.props.match.params.id, studentObject)
       // .then(res => { console.log('axios put', res.data) })
       .catch(err => { console.log(err) });

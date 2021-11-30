@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
+import { DELETE_STUDENT } from '../server_url'
 
 export default class StudentTableRow extends Component {
 
   deleteStudent = () => {
-    axios.delete('http://localhost:4000/students/delete-student/' + 
+    axios.delete(DELETE_STUDENT +
       this.props.obj._id)
       .then(res => {
         console.log('Student successfully deleted!')

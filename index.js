@@ -28,11 +28,11 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use('/students', studentRoute);
+if (process.env.NODE_ENV === 'development') app.use(cors());
+app.use('/api', studentRoute);
 
 // PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
   console.log(`Connected to port ${port}...`);
 })

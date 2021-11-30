@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Table from 'react-bootstrap/Table'
 import StudentTableRow from './StudentTableRow'
+import { GET_STUDENTS } from '../server_url';
 
 export default class StudentList extends Component {
 
@@ -14,7 +15,7 @@ export default class StudentList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/students')
+    axios.get(GET_STUDENTS)
       .then(res => {
         this.setState({
           students: res.data
