@@ -1,10 +1,10 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
-const bodyPasser = require('body-parser');
+const path = require('path');
+const mongoose = require('mongoose');
 const dbConfig = process.env.MONGODB_URI;
-// dbConfig = require('./database/db');
+require('dotenv').config();
+// const bodyPasser = require('body-parser');
 
 console.log("dbConfig");
 console.log(dbConfig);
