@@ -36,6 +36,10 @@ app.use((err, req, res, next) => {
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
+  app.get('/test1', (req, res) => {
+    console.log('visited test1 page');
+    res.status(200).send('hello world');
+  });
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     console.log('welcome to my web')
@@ -47,4 +51,5 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Connected to port ${port}...`);
+  console.log(`http://localhost:${port}`);
 })
