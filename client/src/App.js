@@ -1,5 +1,5 @@
 import Nav from 'react-bootstrap/Nav'
-import NavBar from 'react-bootstrap/NavBar'
+import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -18,30 +18,30 @@ function App() {
     <Router>
       <div className="App">
 
-          <NavBar bg="dark" variant="dark">
-            <Container>
+        <Navbar bg="dark" variant="dark">
+          <Container>
 
-              <NavBar.Brand>
+            <Navbar.Brand>
+              <Link to={"/create-student"} className="nav-link">
+                React MERN Stack CRUD
+              </Link>
+            </Navbar.Brand>
+
+            <Nav className="justify-content-end">
+              <Nav>
                 <Link to={"/create-student"} className="nav-link">
-                  React MERN Stack CRUD
+                  Create Student
                 </Link>
-              </NavBar.Brand>
-
-              <Nav className="justify-content-end">
-                <Nav>
-                  <Link to={"/create-student"} className="nav-link">
-                    Create Student
-                  </Link>
-                </Nav>
-                <Nav>
-                  <Link to={"/student-list"} className="nav-link">
-                    Student List
-                  </Link>
-                </Nav>
               </Nav>
+              <Nav>
+                <Link to={"/student-list"} className="nav-link">
+                  Student List
+                </Link>
+              </Nav>
+            </Nav>
 
-            </Container>
-          </NavBar>
+          </Container>
+        </Navbar>
 
         <Container>
           <Row>
